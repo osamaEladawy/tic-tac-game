@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac/routes/game.dart';
-import 'package:tic_tac/routes/style_color.dart';
+import 'package:tic_tac/models/game.dart';
+import 'package:tic_tac/core/theme/style_color.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -43,9 +43,7 @@ class _HomeState extends State<Home> {
               color: Colors.white,
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           SizedBox(
             height: boardWidth,
             width: boardWidth,
@@ -58,7 +56,7 @@ class _HomeState extends State<Home> {
                 return InkWell(
                   onTap: gameOver
                       ? null
-                       : () {
+                      : () {
                           if (game.board![index] == "") {
                             setState(() {
                               game.board![index] = lastValue;
@@ -113,13 +111,13 @@ class _HomeState extends State<Home> {
             onPressed: () {
               setState(() {
                 game.board = Game.initGameBoad();
-                 lastValue = "x";
-                 turn = 0;
-                 result = "";
-                 scoreboard = [0, 0, 0, 0, 0, 0, 0, 0];
+                lastValue = "x";
+                turn = 0;
+                result = "";
+                scoreboard = [0, 0, 0, 0, 0, 0, 0, 0];
               });
-
-
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => const Home()));
             },
             icon: const Icon(
               Icons.replay,

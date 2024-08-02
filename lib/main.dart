@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart' ;
 import 'package:provider/provider.dart' ;
-import 'package:tic_tac/routes/game.dart';
-import 'package:tic_tac/routes/home.dart' ;
-import 'package:tic_tac/routes/style_color.dart';
+import 'package:tic_tac/models/game.dart';
+import 'package:tic_tac/views/home.dart' ;
+import 'package:tic_tac/core/theme/style_color.dart';
 
 void main() {
   runApp(const MyApp());
