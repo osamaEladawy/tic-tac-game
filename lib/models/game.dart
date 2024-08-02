@@ -7,12 +7,12 @@ class Player{
 }
 
 class Game extends ChangeNotifier{
-  static const boardLenght = 9;
+  static const boardLength = 9;
   static const boardSize = 100.0;
 
   List <String>? board;
 
- static List<String>? initGameBoad()=>List.generate(boardLenght, (index) => Player.empty);
+ static List<String>? initGameBoad()=>List.generate(boardLength, (index) => Player.empty);
 
  bool winnerCheck(String player,int index,List<int>scoreboard,int gridSize){
    int row = index ~/3;

@@ -48,11 +48,11 @@ class _HomeState extends State<Home> {
             height: boardWidth,
             width: boardWidth,
             child: GridView.count(
-              crossAxisCount: Game.boardLenght ~/ 3,
+              crossAxisCount: Game.boardLength ~/ 3,
               padding: const EdgeInsets.all(16),
               mainAxisSpacing: 8,
               crossAxisSpacing: 8,
-              children: List.generate(Game.boardLenght, (index) {
+              children: List.generate(Game.boardLength, (index) {
                 return InkWell(
                   onTap: gameOver
                       ? null
